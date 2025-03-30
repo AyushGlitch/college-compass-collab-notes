@@ -1,12 +1,10 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { creatorId, roomName, content } = req.body;
-
     try {
       const document = await prisma.document.upsert({
         where: { creatorId_roomName: { creatorId, roomName } },
