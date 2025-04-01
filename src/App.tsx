@@ -7,7 +7,7 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Landing />} />
+                <Route path="/" element={<Editor />} />
                 <Route path="/editor" element={<Editor />} />
             </Routes>
         </BrowserRouter>
