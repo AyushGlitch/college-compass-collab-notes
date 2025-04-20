@@ -65,7 +65,7 @@ const Editor: React.FC = () => {
             quillRef.current = quill;
 
             const ydoc = new Y.Doc();
-            const provider = new WebrtcProvider(`${creatorId}-${roomName}`, ydoc, { signaling: ['ws://4.240.121.208:4444'] });
+            const provider = new WebrtcProvider(`${creatorId}-${roomName}`, ydoc, { signaling: ['wss://tekneontech.live/notes/'] });
             const ytext = ydoc.getText('quill');
             const binding = new QuillBinding(ytext, quill, provider.awareness);
 
